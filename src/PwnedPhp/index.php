@@ -28,7 +28,7 @@
         $buffer = readHashAt($file, $i);
 	$currPrefix = getPrefix($buffer);
 	if ($currPrefix != $prefix) { break; }
-        $output .= bin2hex($buffer) . "\n";
+        $output .= strtoupper(bin2hex($buffer)) . "\n";
     }
 
     fclose($file);
