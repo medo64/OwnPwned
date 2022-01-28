@@ -15,8 +15,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	inFileName := homeDir + "/Downloads/Pwned/pwned-passwords-sha1-ordered-by-hash-v7.txt"
-	outFileName := homeDir + "/Downloads/Pwned/pwned-passwords-sha1-ordered-by-hash-v7.bin"
+	inFileName := homeDir + "/Downloads/pwned-passwords-sha1-ordered-by-hash-v8.txt"
+	outFileName := homeDir + "/Downloads/pwned-passwords-sha1-ordered-by-hash-v8.bin"
 
 	inFile, err := os.Open(inFileName)
 	if err != nil {
@@ -37,12 +37,12 @@ func main() {
 	scanner := bufio.NewScanner(inFile)
 	for scanner.Scan() {
 		lineNumber++
-		if lineNumber%1000000 == 0 {
-			if lineNumber%10000000 == 0 {
-				fmt.Print(":")
-			} else {
-				fmt.Print(".")
-			}
+		if lineNumber%100000000 == 0 {
+			fmt.Println()
+		} else if lineNumber%10000000 == 0 {
+			fmt.Print(":")
+		} else if lineNumber%1000000 == 0 {
+			fmt.Print(".")
 		}
 
 		line := scanner.Text()
