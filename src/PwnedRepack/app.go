@@ -8,15 +8,14 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
+	"time"
 )
 
 func main() {
-	homeDir, err := os.UserHomeDir()
-	if err != nil {
-		panic(err)
-	}
-	inFileName := homeDir + "/Downloads/pwned-passwords-sha1-ordered-by-hash-v8.txt"
-	outFileName := homeDir + "/Downloads/pwned-passwords-sha1-ordered-by-hash-v8.bin"
+	currentDate := time.Now().Format("20060102")
+
+	inFileName := "/Temp/pwned.txt"
+	outFileName := "/Temp/pwned-" + currentDate + ".bin"
 
 	inFile, err := os.Open(inFileName)
 	if err != nil {
