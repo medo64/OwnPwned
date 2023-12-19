@@ -11,8 +11,6 @@ import (
 )
 
 func main() {
-	currentDate := time.Now().Format("20060102")
-
 	inFileName := "/Temp/pwned.txt"
 	outFileName := "/Temp/pwned.bin"
 
