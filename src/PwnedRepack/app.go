@@ -8,14 +8,13 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
-	"time"
 )
 
 func main() {
 	currentDate := time.Now().Format("20060102")
 
 	inFileName := "/Temp/pwned.txt"
-	outFileName := "/Temp/pwned-" + currentDate + ".bin"
+	outFileName := "/Temp/pwned.bin"
 
 	inFile, err := os.Open(inFileName)
 	if err != nil {
