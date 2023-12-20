@@ -9,6 +9,13 @@ ln -s /usr/local/go/bin/go /usr/bin/go
 go version
 
 
-### Run
+## Installing HaveIBeenPwned Downloader
 
-go run app.go
+dotnet tool install --global haveibeenpwned-downloader
+haveibeenpwned-downloader /Temp/pwned
+
+
+## Repack to binary
+
+haveibeenpwned-downloader -o /Temp/pwned
+go run src/PwnedRepack/app.go
