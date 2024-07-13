@@ -12,10 +12,10 @@ go version
 ## Installing HaveIBeenPwned Downloader
 
 dotnet tool install --global haveibeenpwned-downloader
-haveibeenpwned-downloader /Temp/pwned
+haveibeenpwned-downloader ~/Downloads/pwned.txt
 
 
 ## Repack to binary
 
-haveibeenpwned-downloader -o /Temp/pwned
+haveibeenpwned-downloader ~/Downloads/pwned.txt
 go run src/PwnedRepack/app.go

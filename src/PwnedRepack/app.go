@@ -11,8 +11,8 @@ import (
 )
 
 func main() {
-	inFileName := "/Temp/pwned.txt"
-	outFileName := "/Temp/pwned.bin"
+	inFileName := "pwned.txt"
+	outFileName := "pwned.bin"
 
 	inFile, err := os.Open(inFileName)
 	if err != nil {
